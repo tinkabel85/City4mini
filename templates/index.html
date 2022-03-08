@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+
+{% block main %}
+<section class="main">
+    <div class="main_list">
+        <ul>
+            {% for place in places %}
+            <li>
+                <div class="main_card" onclick="window.location.href='/places/{{place.id}}';">
+                    <div class="card border-white mb-3" style="max-width: 640px">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="{{place.imgUrl}}" class="img-fluid rounded-start" alt="picture of the place">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <a href={{place.url}} class="card_link">
+                                        <h5 class="card-title">{{place.name}}</h5>
+                                    </a>
+                                    <p class="card-text">{{place.text}}</p>
+                                    <p class="card-text"><small class="text-muted"><b>Address:</b>
+                                            {{place.address}}</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+    <div id="map"></div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="/static/markers.js"></script>
+<script type="text/javascript" src="/static/script.js"></script>
+{% endblock scripts %}

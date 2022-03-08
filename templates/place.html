@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+
+{% block main %}
+
+<section class="place_wrap">
+    <div class="place_gallery">
+        <div class="slide active" style="background-image: url('{{img1}}')"></div>
+        <div class="slide" style="
+          background-image: url('{{img2}}')"></div>
+        <div class="slide" style="
+          background-image: url('{{img3}}')"></div>
+        <div class="slide" style="
+          background-image: url('{{img4}}')"></div>
+
+        <!-- <img class="slide" src='{{img1}}' width="300" height=auto />
+        <img class="slide" src='{{img2}}' width="300" height=auto />
+        <img class="slide" src='{{img3}}' width="300" height=auto />
+        <img class="slide" src='{{img4}}' width="300" height=auto /> -->
+    </div>
+    <h2 class="place_title"> {{name}}</h2>
+    <div class="place_content">
+        <div class="place_description">
+            <p>{{text}}</p>
+        </div>
+        <section class="place_contacts">
+            <h4>Contacts:</h4>
+            <div class="place_contacts_web">
+                <a href={{url}}>
+                    website
+                </a>
+            </div>
+            <div class="place_contacts_address">{{address}}
+            </div>
+            <div class=" place_contacts_phone">
+                {{phone}}
+            </div>
+
+
+        </section>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="/static/place_script.js"></script>
+{% endblock scripts %}

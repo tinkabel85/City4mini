@@ -1,0 +1,274 @@
+body
+{
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+/* *
+{
+    border: 1px red dashed;
+} */
+.page_container
+{
+    position: relative;
+    height: 100vh;
+}
+.wrapper
+{
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+#header
+{
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.logo-wrap
+{
+    float: left;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.nav-wrap
+
+{
+    float: right;
+}
+
+.nav-wrap li a
+{
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #333;
+    display: block;
+    cursor: pointer;
+}
+
+#nav_active
+{
+    font-weight: bold;
+}
+.nav-link:hover 
+{
+    opacity: 0.5;
+}
+
+.hamburger-menu 
+{
+    display: none;
+}
+
+.main
+{
+    display: flex;
+    flex-direction: row;
+    height: 85vh;
+    margin-bottom: 10px;
+}
+
+
+.main_list
+{
+  /* flex: 2; */
+  margin-right: 15px;
+  overflow: hidden; 
+  overflow-y: scroll;
+}
+
+ul 
+{
+    list-style: none;
+    padding-left: 0;
+}
+.main_card
+{
+    border: 1px solid #ebebeb;
+    margin-bottom: 20px;
+    padding: 15px;
+    width: 100%;
+}
+.main_card:hover
+{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.card_link
+{
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+}
+.card_link:hover
+{
+    color: #000;
+    text-decoration: underline;
+}
+.card-text
+{
+    font-size: 14px;
+}
+#map 
+{ 
+    flex: 1;
+    height: auto; 
+}
+
+.footer
+{
+    font-size: .875em;
+    color: #6c757d;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    padding: 8px 0;
+    width: 100%;
+    height: 2rem;
+}
+.place_wrap
+{
+    margin: 0 auto;
+    height: 85vh;
+}
+.place_gallery
+{
+    margin: 0 auto 20px;
+    width: 80%;
+    height: 50%;
+    display: flex;
+    padding: 0 20px;
+}
+
+.slide {
+    border-radius: 15px;
+    margin: 5px;
+    cursor: pointer;
+    color: #000;
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 500ms ease-in-out;
+  }
+
+  .slide.active{
+    flex: 2;
+    transform: scale(1.05);
+  }
+
+.place_title
+{
+    text-align: center;
+
+}
+.place_content
+{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: 0 auto;
+    
+}
+.place_description
+{
+    flex: 2;
+    padding: 10px;
+}
+.place_contacts
+{
+    flex: 1;
+    padding: 12px;
+    flex-direction: column;
+    border: 1px #ebebeb solid;
+    border-radius: 5px;
+}
+
+.place_contacts_web, .place_contacts_address, .place_contacts_phone
+{
+    border-top: 1px #ebebeb solid;
+    padding: 10px;
+}
+
+.contact_wrap
+{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.contact_message
+{
+
+}
+.contact_buttons
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: auto;
+    margin: auto;
+    text-transform: uppercase;
+}
+
+.contact_buttons .button a 
+{
+    border: 1px solid #edecef;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    margin-right: 20px;
+    max-width: 240px;
+}
+a 
+{
+    text-decoration: none;
+}
+.contact_buttons .button a:hover
+{
+    opacity: 0.7;
+}
+
+.contact_buttons .button a .label 
+{
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: .05em;
+    padding-left: 17px;
+}
+.telegram 
+{
+    color: #36ade0;
+}
+.whatsapp
+{
+    color: #25d366;
+}
+.instagram
+{
+    color: #a739ac;
+}
+.gmail
+{
+    color: #3c4043;
+}
+
+.telegram:hover
+{
+    color: #36ade0;
+}
+.whatsapp:hover
+{
+    color: #25d366;
+}
+.instagram:hover
+{
+    color: #a739ac;
+}
+.gmail:hover
+{
+    color: #3c4043;
+}
+    
