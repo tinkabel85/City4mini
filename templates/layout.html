@@ -47,6 +47,9 @@
                                 <a class="nav-link text-dark" href="/">Home</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link text-dark" href="add.html">Add a place</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link text-dark" href="/about.html">About City4Minis</a>
                             </li>
                             <li class="nav-item">
@@ -63,6 +66,9 @@
                         <ul class="menu__box">
                             <li class="nav-item"><a class="nav-link text-dark hamburg_menu" href="/">Home</a>
                             </li>
+                            <li class="nav-item"><a class="nav-link text-dark hamburg_menu" href="/add.html">
+                                    Add a place</a>
+                            </li>
                             <li class="nav-item"><a class="nav-link text-dark hamburg_menu" href="/about.html">
                                     About City4Minis</a>
                             </li>
@@ -74,6 +80,11 @@
 
                 </div>
             </header>
+            <!-- {% if get_flashed_messages() %}
+            <div class="alert alert-success mb-0 py-2 text-center" role="alert">
+                {{ get_flashed_messages() | join(" ") }}
+            </div>
+            {% endif %} -->
             <main>
                 {% block main %}{% endblock %}
             </main>
