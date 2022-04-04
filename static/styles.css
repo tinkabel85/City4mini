@@ -51,6 +51,10 @@ body
 {
     font-weight: bold;
 }
+.nav-link 
+{
+    font-size: calc(12px + 4 * (100vw / 1440));
+}
 .nav-link:hover 
 {
     opacity: 0.5;
@@ -108,6 +112,13 @@ ul
 .card-text
 {
     font-size: 14px;
+}
+.card_photo
+{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid #6c757d;
 }
 #map 
 { 
@@ -230,10 +241,15 @@ ul
     padding: 10% 45% 80px 20px;
     background-size: 55%;
 }
+.about_title
+{
+    text-align: center;
+}
 .about_text
 {
     background-color: #fafafa;
     padding: 20px;
+    font-size: calc(12px + 7 * (100vw / 1440));
 }
 
 .contact_wrap
@@ -246,6 +262,7 @@ ul
 {
     text-align: center;
     margin-bottom: 40px;
+    font-size: calc(12px + 14 * (100vw / 1440));
 }
 .contact_form
 {
@@ -273,6 +290,7 @@ ul
 }
 .contact_message_input
 {
+    height: 20vh;
     background-color: #f5f8fa;
     border: 1px solid #cbd6e2;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -282,7 +300,7 @@ ul
 {
     text-align: center;
 }
-.contact_button_submit
+.button_submit
 {
     background: #70C84A;
     border: 1px solid #70C84A;
@@ -290,6 +308,15 @@ ul
     font-size: 18px;
     line-height: 18px;
     padding: 10px 20px;
+    border-radius: 3px;
+}
+
+.button_submit:hover
+{
+    background: #FAFBFB;
+    border: 1px solid #70C84A;
+    color: #70C84A;
+    font-weight: 600;
 }
 
 .contact_buttons
@@ -335,6 +362,12 @@ a
     letter-spacing: .05em;
     padding-left: 17px;
 }
+
+.contact_button_content
+{
+    display: flex;
+}
+
 .telegram 
 {
     color: #36ade0;
@@ -369,3 +402,342 @@ a
     color: #3c4043;
 }
     
+@media screen and (max-width: 1019px) and (min-width: 769px)
+{
+    .nav-link
+    {
+        padding: 0.5rem 0.5rem;
+    }
+    .contact_form
+    {
+        width: 100%;
+    }
+    .contact_buttons .button a .label 
+    {
+        font-size: 14px;
+        padding-left: 6px;
+    }
+    .contact_buttons .button a
+    {
+        margin-right: 0;
+        max-width: 90%;
+        height: 40px;
+        margin-bottom: 5px;
+    }
+    .contact_button_content
+    {
+        min-width: 135px;
+    }
+    .media_icon
+    {
+        width: 32px;
+        height: 32px;
+    }
+    .contact_buttons .button:last-child 
+    {
+        max-width: 100%;
+    }
+}
+
+@media (max-width:768px)
+{
+    #header 
+    {
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+    .nav-wrap
+    {
+        display: none;
+    }
+
+    .hamburger-menu
+    {
+        display: block;
+    }
+    #menu__toggle {
+        opacity: 0;
+      }
+
+    #menu__toggle:checked~.menu__btn>span
+    {
+        transform: rotate(45deg);
+    }
+
+    #menu__toggle:checked~.menu__btn>span::before
+    {
+        top: 0;
+        transform: rotate(0);
+    }
+
+    #menu__toggle:checked~.menu__btn>span::after
+    {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    #menu__toggle:checked~.menu__box
+    {
+        visibility: visible;
+        left: 0;
+        z-index: 2;
+    }
+    .menu__btn
+    {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 22px;
+        right: 23px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 3;
+    }
+
+    .menu__btn>span,
+    .menu__btn>span::before,
+    .menu__btn>span::after
+    {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #505050;
+        transition-duration: .25s;
+    }
+
+    .menu__btn>span::before
+    {
+        content: "";
+        top: -8px;
+    }
+
+    .menu__btn>span::after
+    {
+        content: "";
+        top: 8px;
+    }
+
+    .menu__box
+    {
+        display: block;
+        position: fixed;
+        visibility: hidden;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding-block: 100px;
+        padding-left: 0;
+        list-style: none;
+        text-align: center;
+        background-color: #fff;
+    }
+
+    .hamburg_menu
+    {
+        font-size: 18px;
+    }
+
+    .main_content_wrap
+    {
+        height: 80vh;
+    }
+
+    .about
+    {
+        padding: 5% 40% 80px 0;
+    }
+    .contact_title 
+    {
+    margin-bottom: 20px;
+    font-size: calc(12px + (14 + 14 * 0.7) * ((100vw - 320px) / 1440));
+    }
+    .contact_buttons .button a .label 
+    {
+        font-size: 14px;
+        padding-left: 6px;
+    }
+    .contact_buttons .button a
+    {
+        margin-right: 0;
+        max-width: 100%;
+        height: 40px;
+        margin-bottom: 5px;
+    }
+    .contact_button_content
+    {
+        min-width: 135px;
+    }
+    .media_icon
+    {
+        width: 32px;
+        height: 32px;
+    }
+    .contact_buttons .button:last-child 
+    {
+        max-width: 100%;
+    }
+    .contact_form 
+    {
+        padding: 0;
+        width: 100%;
+    }
+    .contact_input_info 
+    {
+        margin-bottom: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+    .contact_field
+    {
+        margin-bottom: 5px;
+    }
+    .form-control
+    {
+        font-size: 13px;
+    }
+    .contact_message
+    {
+        margin-bottom: 0;
+    }
+    .contact_message_input
+    {
+        height: 20vh;
+    }
+    .button_submit
+    {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+    
+}
+
+@media (max-width:450px)
+{
+    #header
+    {
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+    .footer
+    {
+        font-size: .675em;
+    }
+    .about
+    {
+        /* height: 77vh;
+        width: 90%;
+        margin-bottom: 10px;
+        background: none;
+        padding: 10px;
+        background-color: #fafafa; */
+        height: 83vh;
+        background: 50% 95% no-repeat url("https://i.ibb.co/DRL7qgq/family-small.jpg");
+        padding: 10px;
+        background-size: 50%;
+    }
+    .about_text
+    {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .contact_title 
+    {
+    margin-bottom: 10px;
+    }
+  
+    .contact_buttons .button a
+    {
+        margin-right: 0;
+        max-width: 100%;
+        height: 40px;
+        margin-bottom: 5px;
+    }
+    .contact_button_content
+    {
+        min-width: 135px;
+    }
+    .media_icon
+    {
+        width: 32px;
+        height: 32px;
+    }
+    .contact_buttons .button a .label 
+    {
+        font-size: 14px;
+    }
+    .contact_buttons .button:last-child 
+    {
+        max-width: 100%;
+    }
+    .contact_form 
+    {
+        padding: 0;
+        width: 100%;
+    }
+    .contact_input_info 
+    {
+        margin-bottom: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact_field
+    {
+        margin-bottom: 5px;
+    }
+    .form-control
+    {
+        font-size: 13px;
+    }
+    .contact_message
+    {
+        margin-bottom: 0;
+    }
+    .contact_message_input
+    {
+        height: 15vh;
+        font-size: 13px;
+    }
+    .button_submit
+    {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width:375px) 
+{
+    .nav-link
+    {
+      font-size: 13px;
+      
+    }
+  
+    .about
+    {
+        height: 83vh;
+        background: 50% 95% no-repeat url("https://i.ibb.co/DRL7qgq/family-small.jpg");
+        padding: 10px;
+        background-size: 55%;
+    }
+    .about_text
+    {
+        padding: 10px;
+    }
+   
+}
+
+@media (max-width:320px) 
+{
+    .about
+    {
+        height: 77vh;
+        background: none;
+        padding: 10px;
+    }
+}
+  
+
