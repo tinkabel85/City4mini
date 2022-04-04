@@ -46,34 +46,3 @@ for (let i = 0; i < markers.length; ++i) {
 const card_preview = document.querySelector('.main_card');
 const card = document.querySelector('.show_card');
 
-
-// function showCard() {
-//     document.querySelector('.main').style.display = 'none';
-//     card.style.display = 'flex';
-// }
-
-// card_preview.addEventListener('click', function () {
-//     document.location.href = '/templates/card.html';
-// });
-
-// function slidesPlugin(activeSlide = 0) {
-//     const slides = document.querySelectorAll('.slide')
-
-//     slides[activeSlide].classList.add('active')
-
-//     for (const slide of slides) {
-//         slide.addEventListener('click', () => {
-//             clearActiveClasses()
-
-//             slide.classList.add('active')
-//         })
-//     }
-
-//     function clearActiveClasses() {
-//         slides.forEach((slide) => {
-//             slide.classList.remove('active')
-//         })
-//     }
-// }
-
-// slidesPlugin(4)

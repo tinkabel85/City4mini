@@ -126,7 +126,37 @@ ul
     width: 100%;
     height: 2rem;
 }
-.place_wrap
+
+.add_wrap
+{
+    width: 80%;
+    margin: 0 auto;
+    height: 75vh;
+    padding: 15px;
+}
+.add_description
+{
+    text-align: center;
+}
+.add_form
+{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border: 1px solid #ebebeb;
+    padding: 20px;
+    height: 60vh;
+    overflow: hidden;
+    overflow-y: scroll; 
+    margin-bottom: 10px;
+}
+.add_input
+{
+    margin-bottom: 20px;
+}
+.add_button
+{
+    text-align: right;
+}
+.main_content_wrap
 {
     margin: 0 auto;
     height: 85vh;
@@ -190,16 +220,78 @@ ul
     padding: 10px;
 }
 
+.about
+{
+    height: 80vh;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+    background: top right no-repeat url("https://i.ibb.co/DRL7qgq/family-small.jpg");
+    padding: 10% 45% 80px 20px;
+    background-size: 55%;
+}
+.about_text
+{
+    background-color: #fafafa;
+    padding: 20px;
+}
+
 .contact_wrap
 {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
+.contact_title
+{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.contact_form
+{
+    padding: 20px;
+    width: 80%;
+    margin: 0 auto;
+}
+.form-control
+{
+    background-color: #f5f8fa;
+    border: 1px solid #cbd6e2;
+}
+.contact_form_title
+{
+    text-align: center;
+}
+.contact_input_info
+{
+    margin-bottom: 20px;
+}
 .contact_message
 {
-
+    padding: 15px;
+    margin-bottom: 20px;
 }
+.contact_message_input
+{
+    background-color: #f5f8fa;
+    border: 1px solid #cbd6e2;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.contact_button
+{
+    text-align: center;
+}
+.contact_button_submit
+{
+    background: #70C84A;
+    border: 1px solid #70C84A;
+    color: #FAFBFB;
+    font-size: 18px;
+    line-height: 18px;
+    padding: 10px 20px;
+}
+
 .contact_buttons
 {
     display: flex;
@@ -208,6 +300,7 @@ ul
     width: auto;
     margin: auto;
     text-transform: uppercase;
+    margin-bottom: 30px;
 }
 
 .contact_buttons .button a 
@@ -221,6 +314,10 @@ ul
     height: 60px;
     margin-right: 20px;
     max-width: 240px;
+}
+.contact_buttons .button:last-child
+{
+    max-width: 260px;
 }
 a 
 {

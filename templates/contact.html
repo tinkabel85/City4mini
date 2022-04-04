@@ -2,10 +2,10 @@
 
 
 {% block main %}
-<section class="place_wrap">
+<section class="main_content_wrap">
     <div class="contact_wrap">
         <div class="contact_message">
-            <header>
+            <header class="contact_title">
                 <h3>Please feel free to contact me anytime</h3>
             </header>
             <div class="contact_buttons">
@@ -42,8 +42,51 @@
                     </a>
                 </div>
             </div>
+            {% if get_flashed_messages() %}
+            <div class="alert alert-success mb-0 py-2 text-center" role="alert">
+                {{ get_flashed_messages() | join(" ") }}
+            </div>
+            {% endif %}
+            <div class="contact_form">
+                <h4 class="contact_form_title">Or get in touch this way:</h4>
 
+                <div class="row my-3 contact_form">
+                    <form action="./contact.html" method="post">
+                        <div class="row contact_input_info">
+                            <div class="col">
+                                <input type="text" name="name" class="form-control" placeholder="First name"
+                                    aria-label="First name">
+                            </div>
+                            <div class="col">
+                                <input type="text" name="lastName" class="form-control" placeholder="Last name"
+                                    aria-label="Last name"
+                                    oninvalid="this.setCustomValidity('Enter Your Last Name Here')"
+                                    oninput="this.setCustomValidity('')">
+                            </div>
+                            <div class="col">
+                                <input type="email" name="email" class="form-control" placeholder="Email Address"
+                                    aria-label="Email Address"
+                                    oninvalid="this.setCustomValidity('Enter Your Email Here')"
+                                    oninput="this.setCustomValidity('')">
+                            </div>
+
+                        </div>
+                        {% if message %}
+                        <span style="color: red;">{{ message }}</span>
+                        {% endif %}
+                        <div class="row contact_message">
+                            <textarea class="contact_message_input" name="message" id="" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="contact_button">
+                            <input class="contact_button_submit" type="submit" value="Submit">
+                        </div>
+                    </form>
+
+                </div>
+            </div>
         </div>
+
+    </div>
     </div>
 </section>
 

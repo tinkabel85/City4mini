@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+
+{% block main %}
+<section class="add_wrap">
+    <div class="add_description">
+        <h4>Feel free to add your favourite location!</h4>
+        <p>Do you know a place that we accidentlly haven't listed here? You are welcome to add a new location yourself!
+            We will review your submission and update our database as soon as possible. The
+            requirements are pretty simple: it should be a place (e.g. museum, exhibition, activity) where families with
+            kids can have fun alltogether. </p>
+    </div>
+    <div class="add_form">
+        <form action="/add.html" method="post">
+            <div class="col-12 add_input">
+                <label for="inputName" class="form-label">Location Name</label>
+                <input type="text" class="form-control" id="inputName" name="name" placeholder="e.g. Museum of toys"
+                    required>
+            </div>
+            <div class="col-12 add_input">
+                <label for="inputAddress" class="form-label">Address</label>
+                <input type="text" class="form-control" id="inputAddress" name="address"
+                    placeholder="e.g. Immenhof 11, Hamburg 22087">
+            </div>
+            <div class="col-12 add_input">
+                <label for="inputPhone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="inputPhone" name="phone" placeholder="040 xxx xxx xx">
+            </div>
+            <div class="col-12 add_input">
+                <label for="inputWebsite" class="form-label">Webpage</label>
+                <input type="url" pattern="https://.*" class="form-control" id="inputWebsite" name="web"
+                    placeholder="https://xxxx">
+            </div>
+            <div class="col-12 add_input">
+                <label for="inputText" class="form-label">Add some description</label>
+                <input type="text" class="form-control" id="inputText" name="text"
+                    placeholder="This location offers a great variery of ...">
+            </div>
+            <div class="add_photos">
+                <p>Please submit some photos of the place</p>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="file01" name="photo1">
+                    <label class="input-group-text" for="file01">Upload</label>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="file02" name="photo2">
+                    <label class="input-group-text" for="file02">Upload</label>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="file03" name="photo3">
+                    <label class="input-group-text" for="file03">Upload</label>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="file04" name="photo4">
+                    <label class="input-group-text" for="ifile04">Upload</label>
+                </div>
+            </div>
+            <div class="add_button">
+                <button class="btn btn-primary" type="submit">Add a new place</button>
+            </div>
+        </form>
+    </div>
+
+</section>
+
+
+{% endblock %}
