@@ -3,6 +3,11 @@
 
 {% block main %}
 <section class="add_wrap">
+    {% if get_flashed_messages() %}
+    <div class="alert alert-success mb-0 py-2 text-center" role="alert">
+        {{ get_flashed_messages() | join(" ") }}
+    </div>
+    {% endif %}
     <div class="add_description">
         <h4>Feel free to add your favourite location!</h4>
         <p>Do you know a place that we accidentlly haven't listed here? You are welcome to add a new location yourself!
@@ -10,8 +15,11 @@
             requirements are pretty simple: it should be a place (e.g. museum, exhibition, activity) where families with
             kids can have fun alltogether. </p>
     </div>
+    {% if message %}
+    <span style="color: red;">{{ message }}</span>
+    {% endif %}
     <div class="add_form">
-        <form action="/add.html" method="post">
+        <form action="/add.html" method="post" enctype="multipart/form-data">
             <div class="col-12 add_input">
                 <label for="inputName" class="form-label">Location Name</label>
                 <input type="text" class="form-control" id="inputName" name="name" placeholder="e.g. Museum of toys"
@@ -32,31 +40,30 @@
                     placeholder="https://xxxx">
             </div>
             <div class="col-12 add_input">
-                <label for="inputText" class="form-label">Add some description</label>
+                <label for="inputText" class="form-label">Add some description (2-3 sentences will do)</label>
                 <input type="text" class="form-control" id="inputText" name="text"
                     placeholder="This location offers a great variery of ...">
             </div>
             <div class="add_photos">
-                <p>Please submit some photos of the place</p>
+                <p>Please submit at least four (4) photos of the place</p>
                 <div class="input-group mb-3">
-                    <input type="file" class="form-control" id="file01" name="photo1">
-                    <label class="input-group-text" for="file01">Upload</label>
+                    <input type="file" class="form-control" name="file[]" multiple="true">
                 </div>
-                <div class="input-group mb-3">
+                <!-- <div class="input-group mb-3">
                     <input type="file" class="form-control" id="file02" name="photo2">
-                    <label class="input-group-text" for="file02">Upload</label>
+                    <label class="input-group-text" for="ifile02">Upload</label>
                 </div>
                 <div class="input-group mb-3">
                     <input type="file" class="form-control" id="file03" name="photo3">
-                    <label class="input-group-text" for="file03">Upload</label>
+                    <label class="input-group-text" for="ifile03">Upload</label>
                 </div>
                 <div class="input-group mb-3">
                     <input type="file" class="form-control" id="file04" name="photo4">
                     <label class="input-group-text" for="ifile04">Upload</label>
-                </div>
+                </div> -->
             </div>
             <div class="add_button">
-                <button class="btn btn-primary" type="submit">Add a new place</button>
+                <button class="button_submit" type="submit">Add a new place</button>
             </div>
         </form>
     </div>
