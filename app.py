@@ -36,7 +36,6 @@ db = SQL("sqlite:///cityguide.db")
 def index():
     places = db.execute("SELECT * FROM places WHERE active = 'yes'")
     markers = db.execute("SELECT id, name, url, imgUrl, lat, lng FROM places")
-    print(markers)
     return render_template('index.html', places=places, data=markers)
 
 
