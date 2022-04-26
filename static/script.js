@@ -21,15 +21,22 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     subdomains: ['a', 'b', 'c'],
 }).addTo(map)
 
-let myIcon = L.icon({
-    iconUrl: 'https://i.ibb.co/09yrnbc/pin48.png',
-    iconSize: [48, 38],
+
+let myIcon = L.divIcon({
+    html: "<div  class='marker_pin'></div>",
     iconAnchor: [9, 21],
-    popupAnchor: [0, -14],
+    popupAnchor: [0, -14]
+})
+let myIconActive = L.divIcon({
+    html: "<div  class='marker_pin_active'></div>",
+    iconAnchor: [9, 21],
+    popupAnchor: [0, -14]
 })
 
+let icons = [];
+let s;
 for (let i = 0; i < markers.length; ++i) {
-    L.marker([markers[i].lat, markers[i].lng], { icon: myIcon })
+    s = L.marker([markers[i].lat, markers[i].lng], { icon: myIcon })
         .bindTooltip(
             '<a href="' +
             markers[i].url +
@@ -41,8 +48,36 @@ for (let i = 0; i < markers.length; ++i) {
             }
         )
         .addTo(map)
-}
 
-const card_preview = document.querySelector('.main_card');
-const card = document.querySelector('.show_card');
+    let obj = {
+        marker: s,
+        id: markers[i].id
+    }
+    icons.push(obj)
+}
+console.log(icons)
+console.log(icons[1].marker)
+
+let list = document.querySelector('.main_list')
+let cards = document.querySelectorAll('.main_card');
+console.log(cards)
+
+
+
+cards.forEach(item => {
+    let match = icons.find(element => element.id == item.id)
+    item.addEventListener("mouseover", () => {
+        console.log(match)
+        console.log(item.id)
+        match.marker.setIcon(myIconActive)
+        // icons.forEach(i => i.setIcon(myIconActive));
+        console.log(item.getAttribute("id"))
+    });
+
+    item.addEventListener("mouseout", () => {
+        match.marker.setIcon(myIcon)
+    })
+});
+
+
 

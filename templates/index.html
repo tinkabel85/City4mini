@@ -7,7 +7,7 @@
         <ul>
             {% for place in places %}
             <li>
-                <div class="main_card" onclick="window.location.href='/places/{{place.id}}';">
+                <div class="main_card" onclick="window.location.href='/places/{{place.id}}';" id="{{place.id}}">
                     <div class="card border-white mb-3" style="max-width: 640px">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -36,8 +36,11 @@
 </section>
 
 {% endblock %}
-
 {% block scripts %}
-<script type="text/javascript" src="/static/markers.js"></script>
+<script type="text/javascript">
+    let markers = {{ data| tojson}}
+
+</script>
+
 <script type="text/javascript" src="/static/script.js"></script>
 {% endblock scripts %}
