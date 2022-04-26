@@ -1,7 +1,7 @@
 ## CITY GUIDE FOR MINIS
 ___
 
-### Video Demo:  <URL HERE>
+### Video Demo:  <https://www.youtube.com/watch?v=F0itNOsWQqg>
 ___
 
 ### Description
