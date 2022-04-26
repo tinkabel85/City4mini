@@ -4,10 +4,6 @@ body {
     box-sizing: border-box;
 }
 
-/* *
-{
-    border: 1px red dashed;
-} */
 .page_container {
     position: relative;
     min-height: 100vh;
@@ -73,7 +69,7 @@ body {
 
 
 .main_list {
-    /* flex: 2; */
+    flex: 1;
     margin-right: 15px;
     overflow: hidden;
     overflow-y: scroll;
@@ -175,11 +171,6 @@ ul {
     transform: translateY(8px);
 }
 
-/* .myIcon:hover{
-    width: 58px;
-    height: 48px;
-} */
-
 .footer {
     font-size: .875em;
     color: #6c757d;
@@ -252,7 +243,6 @@ ul {
 
 .place_title {
     text-align: center;
-
 }
 
 .place_content {
@@ -281,6 +271,11 @@ ul {
 .place_contacts_phone {
     border-top: 1px #ebebeb solid;
     padding: 10px;
+}
+
+.place_contacts_title {
+    padding: 10px;
+    margin-bottom: 0;
 }
 
 .about {
@@ -573,6 +568,26 @@ a {
         height: 80vh;
     }
 
+    #map {
+        display: none;
+    }
+
+    .main {
+        width: 100%;
+    }
+
+    .card-text {
+        font-size: calc(11px + (3 + 3 * 0.7) * ((100vw - 320px) / 1440));
+    }
+
+    .place_gallery {
+        width: 95%;
+    }
+
+    .place_title {
+        font-size: calc(18px + (14 + 14 * 0.7) * ((100vw - 320px) / 1440));
+    }
+
     .about {
         padding: 5% 40% 80px 0;
     }
@@ -651,13 +666,35 @@ a {
         font-size: .675em;
     }
 
-    .about {
-        /* height: 77vh;
-        width: 90%;
+    .main_card {
         margin-bottom: 10px;
-        background: none;
         padding: 10px;
-        background-color: #fafafa; */
+    }
+
+    .card {
+        text-align: center;
+    }
+
+    .place_content {
+        flex-direction: column;
+        font-size: 12px;
+        width: 90%;
+    }
+
+    .place_contacts {
+        padding: 0;
+    }
+
+    .slide {
+        border-radius: 5px;
+        margin: 3px;
+    }
+
+    .slide.active {
+        flex: 5;
+    }
+
+    .about {
         height: 83vh;
         background: 50% 95% no-repeat url("https://i.ibb.co/DRL7qgq/family-small.jpg");
         padding: 10px;
@@ -734,7 +771,6 @@ a {
 @media (max-width:375px) {
     .nav-link {
         font-size: 13px;
-
     }
 
     .about {

@@ -155,53 +155,5 @@ def add():
         return render_template('add.html')
 
 
-@app.route('/img.html', methods=["GET", "POST"])
-def upload_file():
-    message = ''
-    if request.method == "POST":
-        name = request.form.get("name")
-        name = name.replace(" ", "_").lower()
-        print(name)
-        uploaded_files = request.files.getlist("file[]")
-        print(uploaded_files)
-        filenames = []
-        counter = 0
-        print(len(uploaded_files))
-        if len(uploaded_files) < 4:
-            message = "Please upload at least four (4) photos"
-            return render_template('img.html', message=message)
-        for file in uploaded_files:
-            filename = secure_filename(file.filename)
-            extension = filename.split(".")
-            extension = str(extension[1])
-            print(extension)
-            counter += 1
-            number = str(counter)
-            print(counter)
-            if extension not in app.config['ALLOWED_EXTENSIONS']:
-                message = "You can only upload .jpeg, .jpg, .png files"
-                return render_template('img.html', message=message)
-            # Move the file form the temporal folder to the upload folder
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
-            source = UPLOAD_FOLDER + '/' + filename
-            destination = UPLOAD_FOLDER + '/' + name + number + '.' + extension
-            os.rename(source, destination)
-            # Save the filename into a list, we'll use it later
-            filenames.append(filename)
-
-            # filename = secure_filename(file.filename)
-            # if filename != '':
-            #     file_ext = os.path.splitext(filename)[1]
-            #     if file_ext not in app.config['ALLOWED_EXTENSIONS']:
-            #         message = "You can only upload .jpeg, .jpg, .png files"
-            #         return render_template('img.html', message=message)
-            #     file.save(os.path.join(app.config['UPLOAD_FOLDER'], "temp.jpg"))
-
-            # flash("Your submission was successful!")
-        return redirect(url_for('index'))
-    else:
-        return render_template("img.html")
-
-
 if __name__ == '__main__':
     app.run()
